@@ -128,8 +128,8 @@ const averageChange = totalChange / (totalMonths - 1);
 //Financial analysis output
 console.log('Financial Analysis');
 console.log('-----------------------');
-console.log(`Total Months: ${totalMonths}`);
-console.log(`Total: $${total}`);
-console.log(`Average Change: $${averageChange.toFixed(2)}`);
-console.log(`Greatest Increase in Profits/Losses: ${maxIncrease.date} ($${maxIncrease.amount})`);
-console.log(`Greatest Decrease in Profits/Losses: ${maxDecrease.date} ($${maxDecrease.amount})`);
+console.log("Total Months: " + totalMonths);
+console.log("Total: " + "$" + total);
+console.log("Average Change: " + averageChange.toFixed(2));
+console.log("Greatest Increase in Profits/Losses: " + maxIncrease.date + " " + maxIncrease.amount);
+console.log("Greatest Decrease in Profits/Losses: " + maxDecrease.date + " " + maxDecrease.amount);
