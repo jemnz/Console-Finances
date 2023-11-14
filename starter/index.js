@@ -89,12 +89,24 @@ var finances = [
 
 let totalMonths = finances.length;
 let total = 0;
+let totalChange = 0;
 
 
 for (let i = 0; i < totalMonths; i++) {
   const currentProfitLoss = finances[i][1];
   total += currentProfitLoss;
+
+  if (i > 0) {
+    const change = currentProfitLoss - finances[i - 1][1];
+    totalChange += change;
+  }
+
+
 }
+
+const averageChange = totalChange / (totalMonths - 1);
+
 
 console.log(`Total Months: ${totalMonths}`);
 console.log(`Total: $${total}`);
+console.log(`Average Change: $${averageChange.toFixed(2)}`);
