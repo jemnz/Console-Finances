@@ -88,4 +88,13 @@ var finances = [
 ];
 
 let totalMonths = finances.length;
+let total = 0;
+
+
+for (let i = 0; i < totalMonths; i++) {
+  const currentProfitLoss = finances[i][1];
+  total += currentProfitLoss;
+}
+
 console.log(`Total Months: ${totalMonths}`);
+console.log(`Total: $${total}`);
