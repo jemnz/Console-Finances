@@ -13,5 +13,5 @@ The website can be opened in browsers any browser and viewed in the developer's 
 
 You will need to consult your browser's instructions to view the developer's console in order to view the Financial Analysis. Below is a screenshot of the deployed website and browser console. 
 
-[Screenshot of website])
+[Screenshot of website and console](images/Screenshot-of-Financial-Analysis.jpg)
 
