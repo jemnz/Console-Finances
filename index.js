@@ -1,3 +1,4 @@
+// Financial data array containing month and corresponding profit/loss.
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -87,30 +88,31 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+// Variables for analysis.
+
 let totalMonths = finances.length;
 let total = 0;
 let totalChange = 0;
 let maxIncrease = { amount: 0 };
 let maxDecrease = { amount: 0 };
 
+// Total Profit/Loss calculations
 
 for (let i = 0; i < totalMonths; i++) {
   const currentProfitLoss = finances[i][1];
   total += currentProfitLoss;
 
+  // Changes in Profit/Loss calculation
   if (i > 0) {
     const change = currentProfitLoss - finances[i - 1][1];
     totalChange += change;
 
+    // Greatest increase in profits calculation
     if (change > maxIncrease.amount) {
       maxIncrease = { date: finances[i][0], amount: change };
     }
-    if (change < maxDecrease.amount) {
-      maxDecrease = { date: finances[i][0], amount: change };
-    }
-    if (change > maxIncrease.amount) {
-      maxIncrease = { date: finances[i][0], amount: change };
-    }
+
+    //Greatest decrese in profits calculation
     if (change < maxDecrease.amount) {
       maxDecrease = { date: finances[i][0], amount: change };
     }
@@ -119,11 +121,13 @@ for (let i = 0; i < totalMonths; i++) {
 
 }
 
+//Average change calculation
 const averageChange = totalChange / (totalMonths - 1);
 
 
+//Financial analysis output
 console.log('Financial Analysis');
-console.log('----------------------------');
+console.log('-----------------------');
 console.log(`Total Months: ${totalMonths}`);
 console.log(`Total: $${total}`);
 console.log(`Average Change: $${averageChange.toFixed(2)}`);
