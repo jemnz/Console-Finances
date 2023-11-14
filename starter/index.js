@@ -122,6 +122,8 @@ for (let i = 0; i < totalMonths; i++) {
 const averageChange = totalChange / (totalMonths - 1);
 
 
+console.log('Financial Analysis');
+console.log('----------------------------');
 console.log(`Total Months: ${totalMonths}`);
 console.log(`Total: $${total}`);
 console.log(`Average Change: $${averageChange.toFixed(2)}`);
