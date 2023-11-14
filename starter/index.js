@@ -90,6 +90,8 @@ var finances = [
 let totalMonths = finances.length;
 let total = 0;
 let totalChange = 0;
+let maxIncrease = { amount: 0 };
+let maxDecrease = { amount: 0 };
 
 
 for (let i = 0; i < totalMonths; i++) {
@@ -99,6 +101,19 @@ for (let i = 0; i < totalMonths; i++) {
   if (i > 0) {
     const change = currentProfitLoss - finances[i - 1][1];
     totalChange += change;
+
+    if (change > maxIncrease.amount) {
+      maxIncrease = { date: finances[i][0], amount: change };
+    }
+    if (change < maxDecrease.amount) {
+      maxDecrease = { date: finances[i][0], amount: change };
+    }
+    if (change > maxIncrease.amount) {
+      maxIncrease = { date: finances[i][0], amount: change };
+    }
+    if (change < maxDecrease.amount) {
+      maxDecrease = { date: finances[i][0], amount: change };
+    }
   }
 
 
@@ -110,3 +125,5 @@ const averageChange = totalChange / (totalMonths - 1);
 console.log(`Total Months: ${totalMonths}`);
 console.log(`Total: $${total}`);
 console.log(`Average Change: $${averageChange.toFixed(2)}`);
+console.log(`Greatest Increase in Profits/Losses: ${maxIncrease.date} ($${maxIncrease.amount})`);
+console.log(`Greatest Decrease in Profits/Losses: ${maxDecrease.date} ($${maxDecrease.amount})`);
