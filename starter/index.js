@@ -88,4 +88,4 @@ var finances = [
 ];
 
 let totalMonths = finances.length;
-
+console.log(`Total Months: ${totalMonths}`);
